@@ -1,0 +1,14 @@
+package com.geeksforgeeks.binarytree;
+
+public class InvertBinaryTree {
+   public TreeNode InvertTree(TreeNode root) {
+      if(root==null)
+         return null;
+      
+      TreeNode right = InvertTree(root.right);
+      TreeNode left = InvertTree(root.left);
+      root.left = right;
+      root.right = left;
+      return root;
+   }
+}
